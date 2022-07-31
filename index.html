@@ -70,9 +70,8 @@ and open the template in the editor.
             keys.forEach(key => {
                 key.addEventListener('touchstart', function (e) {
                     e.stopPropagation(); 
-                    e.preventDefault();
                     playNote(key);
-                    
+                    e.preventDefault();
                 });
             });
             keys.forEach(key => {
