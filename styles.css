@@ -66,13 +66,13 @@ body {
 }
 @media all and (orientation:portrait) {
     .white {
-        --width: 8vh;
+        --width: 13vw;
         background-color: white;
         border: 1px solid #333;
     }
 
     .black {
-        --width: 4.5vh;
+        --width: 7.5vw;
         background-color: black;
         margin-left: calc(var(--width) / -2);
         margin-right: calc(var(--width) / -2);
