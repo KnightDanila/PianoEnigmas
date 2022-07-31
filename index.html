@@ -67,11 +67,14 @@ and open the template in the editor.
             const blackKeys = document.querySelectorAll('.key.black');
 
             const pass = [];
-
             keys.forEach(key => {
                 key.addEventListener('mousedown', () => playNote(key));
-                key.addEventListener('touchstart', () => playNote(key));
             });
+            keys.forEach(key => {
+                key.addEventListener('touchstart', (e) => playNote(key), e.preventDefault());
+            });
+
+
 
             document.addEventListener('keydown', e => {
                 clickOnKeyBoard(e);
