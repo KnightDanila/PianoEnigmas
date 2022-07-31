@@ -72,7 +72,7 @@ and open the template in the editor.
                 key.addEventListener('mousedown', () => playNote(key));
             });
 
-            document.addEventListener('keydown', e => {
+            function clickOnKey(e) {
                 if (e.repeat) {
                     return;
                 }
@@ -87,26 +87,20 @@ and open the template in the editor.
                 if (blackKeyIndex > -1) {
                     playNote(blackKeys[blackKeyIndex]);
                 }
+            }
+
+            document.addEventListener('keydown', e => {
+                clickOnKey(e);
             });
 
             document.addEventListener('onclick', e => {
-                if (e.repeat) {
-                    return;
-                }
-
-                const key = e.key;
-                const whiteKeyIndex = WHITE_KEYS.indexOf(key);
-                const blackKeyIndex = BLACK_KEYS.indexOf(key);
-
-                if (whiteKeyIndex > -1) {
-                    playNote(whiteKeys[whiteKeyIndex]);
-                    sequenceChecker(whiteKeys[whiteKeyIndex]);
-                }
-                if (blackKeyIndex > -1) {
-                    playNote(blackKeys[blackKeyIndex]);
-                    sequenceChecker(blackKeys[blackKeyIndex]);
-                }
+                clickOnKey(e);
             });
+            
+            document.addEventListener('touchstart', e => {
+                clickOnKey(e);
+            });
+
 
             function sequenceChecker(key) {
 
