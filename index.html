@@ -70,9 +70,14 @@ and open the template in the editor.
 
             keys.forEach(key => {
                 key.addEventListener('mousedown', () => playNote(key));
+                key.addEventListener('touchstart', () => playNote(key));
             });
 
-            function clickOnKey(e) {
+            document.addEventListener('keydown', e => {
+                clickOnKeyBoard(e);
+            });
+
+            function clickOnKeyBoard(e) {
                 if (e.repeat) {
                     return;
                 }
@@ -88,19 +93,6 @@ and open the template in the editor.
                     playNote(blackKeys[blackKeyIndex]);
                 }
             }
-
-            document.addEventListener('keydown', e => {
-                clickOnKey(e);
-            });
-
-            document.addEventListener('onclick', e => {
-                clickOnKey(e);
-            });
-            
-            document.addEventListener('touchstart', e => {
-                clickOnKey(e);
-            });
-
 
             function sequenceChecker(key) {
 
