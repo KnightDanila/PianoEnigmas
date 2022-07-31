@@ -57,24 +57,41 @@ body {
     width: var(--width);
 }
 
-.white {
-    --width: 5vw;
-    background-color: white;
-    border: 1px solid #333;
-}
-
 .white.active {
     background-color: #CCC;
 }
 
-.black {
-    --width: 3vw;
-    background-color: black;
-    margin-left: calc(var(--width) / -2);
-    margin-right: calc(var(--width) / -2);
-    z-index: 2;
-}
-
 .black.active {
     background-color: #333;
+}
+@media all and (orientation:portrait) {
+    .white {
+        --width: 8vh;
+        background-color: white;
+        border: 1px solid #333;
+    }
+
+    .black {
+        --width: 4.5vh;
+        background-color: black;
+        margin-left: calc(var(--width) / -2);
+        margin-right: calc(var(--width) / -2);
+        z-index: 2;
+    }
+}
+
+@media all and (orientation:landscape) {
+    .white {
+        --width: 5.3vw;
+        background-color: white;
+        border: 1px solid #333;
+    }
+
+    .black {
+        --width: 3vw;
+        background-color: black;
+        margin-left: calc(var(--width) / -2);
+        margin-right: calc(var(--width) / -2);
+        z-index: 2;
+    }
 }
