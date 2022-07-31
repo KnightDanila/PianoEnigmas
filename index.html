@@ -69,9 +69,10 @@ and open the template in the editor.
             const pass = [];
             keys.forEach(key => {
                 key.addEventListener('touchstart', function (e) {
-                    playNote(key);
                     e.stopPropagation(); 
                     e.preventDefault();
+                    playNote(key);
+                    
                 });
             });
             keys.forEach(key => {
